@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 double absolute (double x)
 {
     if (x>=0)
@@ -11,11 +12,12 @@ double absolute (double x)
         return -x;
 }
 
-double fahrenheitToCelsius (float t)
+
+double fahrenheitToCelsius (float x)
 {
     double a;
 
-    a = (((double)5/9)*(t-32));
+    a = (((double)5/9)*(x-32));
 
     return a;
 }
@@ -23,6 +25,7 @@ double fahrenheitToCelsius (float t)
 double power (double x, double y)
 {
     double a;
+
     a = pow(x,y);
 
     return a;
@@ -47,24 +50,19 @@ void printPyramid (int x)
 int main()
 {
     double x,a,y;
-    float t;
 
-    cout << "Wartoœæ absolutna liczby "<< x;
+    cout << "Podaj 2 liczby: " << endl;
     cin >> x;
-    cout <<"= " << absolute(x) << endl;
-
-    cout << "Konwersja temperatury: "<< t<<"st C" << fahrenheitToCelsius(9) << "F" << endl;
-
-    cout << "Potega liczby o podstawie ";
-    cin >>x;
-    cout<< x << " i wykladniku ";
     cin >> y;
-    cout << y<<" = "<< power(x,y) <<endl;
 
-    cout << "Piramida dla ";
-    cin >> x;
-    cout << x << endl;
-    cout << printPyramid(x);
+    cout << "Wartosc absolutna liczby "<< x << ": |" << x << "| "<<" = " << absolute(x) << endl;
+
+    cout << "Konwersja temperatury:  "<< x <<" st. C" << " = "<< fahrenheitToCelsius(x) << " F " << endl;
+
+    cout << "Potega liczby o podstawie "<< x << " i wykladniku " << y << " = " << power(x,y) << endl;
+
+    cout << "Piramida dla " << x << endl;
+    printPyramid (x);
 
     return 0;
 }
